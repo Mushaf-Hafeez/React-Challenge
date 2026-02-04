@@ -1,10 +1,12 @@
 // importing components
-import ColorGenerator from "./components/ColorGenerator_1/ColorGenerator";
+import ColorGenerator from "./components/1_ColorGenerator/ColorGenerator";
+import AvatarGenerator from "./components/2_AvatarGenerator/AvatarGenerator";
 
 const App = () => {
   return (
     <main>
-      <ColorGenerator />
+      {/* <ColorGenerator /> */}
+      <AvatarGenerator />
     </main>
   );
 };
