@@ -1,5 +1,6 @@
 // importin custom components
 import Header from "./Header";
+import TasksContainer from "./TasksContainer";
 
 // importing shadcn ui components
 
@@ -8,6 +9,9 @@ const TaskPlanner = () => {
     <div className="h-screen w-full bg-stone-200">
       {/* Header */}
       <Header />
+
+      {/* Tasks */}
+      <TasksContainer />
     </div>
   );
 };
