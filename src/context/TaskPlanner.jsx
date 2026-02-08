@@ -19,6 +19,14 @@ const TaskContextProvider = ({ children }) => {
     setTasks((prev) => [...prev, task]);
   };
 
+  const deleteTask = (id) => {
+    setTasks((prev) => prev.filter((item) => item.id !== id));
+  };
+
+  const deleteAllTasks = () => {
+    setTasks([]);
+  };
+
   // useEffect(() => {
   //   const getTime = setInterval(() => {
   //     const currentTime = new Date().toLocaleTimeString();
@@ -30,7 +38,7 @@ const TaskContextProvider = ({ children }) => {
   //   };
   // }, []);
 
-  const value = { date, setDate, addTask, tasks };
+  const value = { date, setDate, addTask, deleteTask, deleteAllTasks, tasks };
 
   return <TaskContext.Provider value={value}>{children}</TaskContext.Provider>;
 };

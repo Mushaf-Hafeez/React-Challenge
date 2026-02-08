@@ -1,44 +1,10 @@
-import { useState } from "react";
-import Tasks from "./Tasks";
 import { useTask } from "@/context/TaskPlanner";
+
+// importing custom components
+import Tasks from "./Tasks";
 
 const TasksContainer = () => {
   const { tasks } = useTask();
-
-  // const [tasks] = useState([
-  //   {
-  //     id: "task-101",
-  //     title: "Implement Auth Flow",
-  //     description: "Set up JWT tokens and protected routes for the dashboard.",
-  //     priority: "highest",
-  //   },
-  //   {
-  //     id: "task-102",
-  //     title: "Update Footer Links",
-  //     description: "Ensure all social media icons point to the correct URLs.",
-  //     priority: "lowest",
-  //   },
-  //   {
-  //     id: "task-103",
-  //     title: "Optimize Image Assets",
-  //     description: "Compress hero images to improve LCP scores on mobile.",
-  //     priority: "medium",
-  //   },
-  //   {
-  //     id: "task-104",
-  //     title: "Fix Navbar Jump",
-  //     description:
-  //       "Resolve the layout shift occurring when the sticky header toggles.",
-  //     priority: "highest",
-  //   },
-  //   {
-  //     id: "task-105",
-  //     title: "Write API Documentation",
-  //     description:
-  //       "Document the new endpoints for the mobile team integration.",
-  //     priority: "medium",
-  //   },
-  // ]);
 
   // Group tasks once — much more efficient and cleaner
   const tasksByPriority = {

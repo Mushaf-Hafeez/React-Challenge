@@ -14,6 +14,7 @@ import {
   DialogContent,
   DialogDescription,
   DialogHeader,
+  DialogFooter,
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
@@ -42,7 +43,7 @@ import { getRandomId } from "@/utils";
 
 const Header = () => {
   const [openTask, setOpenTask] = useState(false);
-  const { date, setDate, addTask } = useTask();
+  const { date, setDate, addTask, deleteAllTasks } = useTask();
 
   const {
     register,
@@ -51,6 +52,12 @@ const Header = () => {
     reset,
     control,
   } = useForm();
+
+  // deleteTasks function
+  const deleteTasks = () => {
+    deleteAllTasks();
+    toast.success("Tasks deleted.");
+  };
 
   // onSubmit function
   const onSubmit = (data) => {
@@ -220,12 +227,27 @@ const Header = () => {
             </DialogTrigger>
             <DialogContent>
               <DialogHeader>
-                <DialogTitle>Are you absolutely sure?</DialogTitle>
+                <DialogTitle>Delete all tasks</DialogTitle>
                 <DialogDescription>
-                  This action cannot be undone. This will permanently delete
-                  your account and remove your data from our servers.
+                  Are you sure you want to delete all the tasks?
                 </DialogDescription>
               </DialogHeader>
+              <DialogFooter>
+                <DialogClose asChild>
+                  <Button variant="ghost" className={"cursor-pointer"}>
+                    Cancel
+                  </Button>
+                </DialogClose>
+                <DialogClose asChild>
+                  <Button
+                    variant="destructive"
+                    className={"cursor-pointer"}
+                    onClick={deleteTasks}
+                  >
+                    Delete
+                  </Button>
+                </DialogClose>
+              </DialogFooter>
             </DialogContent>
           </Dialog>
         </nav>
