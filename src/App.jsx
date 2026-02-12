@@ -5,6 +5,7 @@ import ImageGallery from "./components/3_ImageGallery/ImageGallery";
 import ThumbnailDownloader from "./components/4_YoutubeThumbnailDownloader/ThumbnailDownloader";
 import TaskPlanner from "./components/5_TaskPlanner/TaskPlanner";
 import ImageResizer from "./components/6_ImageResizer/ImageResizer";
+import ImageConverter from "./components/7_ImageConverter/ImageConverter";
 
 const App = () => {
   return (
@@ -14,7 +15,8 @@ const App = () => {
       {/* <ImageGallery /> */}
       {/* <ThumbnailDownloader /> */}
       {/* <TaskPlanner /> */}
-      <ImageResizer />
+      {/* <ImageResizer /> */}
+      <ImageConverter />
     </main>
   );
 };
